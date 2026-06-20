@@ -182,6 +182,19 @@ Interview Questions
 * Extracted Data
 
 ---
+## Dashboard
+<img width="1692" height="900" alt="Screenshot 2026-06-20 234951" src="https://github.com/user-attachments/assets/604835ab-0f9f-4f9a-9b0b-936dddb13a26" />
+## Candidate Ranking
+<img width="901" height="410" alt="Screenshot 2026-06-21 003250" src="https://github.com/user-attachments/assets/5b90db54-4303-41cb-a501-15b29d4c468e" />
+## Skill Gap Analysis
+<img width="1388" height="821" alt="Screenshot 2026-06-21 001825" src="https://github.com/user-attachments/assets/9f970376-0637-46fa-b110-001eb0a47d8e" />
+## Interview Questions
+<img width="1380" height="809" alt="Screenshot 2026-06-21 000130" src="https://github.com/user-attachments/assets/3919c55f-6de7-4aba-a159-2cf0fa8318ca" />
+## Recommendation Engine
+<img width="1434" height="839" alt="Screenshot 2026-06-21 001648" src="https://github.com/user-attachments/assets/19e9dc20-36d3-4d87-b11e-0f7b61641bce" />
+
+
+
 
 ## Future Improvements
 
@@ -213,9 +226,6 @@ Through this project, I gained hands-on experience with:
 ---
 
 ## Author
-
-
-<img width="1692" height="900" alt="Screenshot 2026-06-20 234951" src="https://github.com/user-attachments/assets/9dd771ae-8de2-41dc-90c1-ab5745a27b98" />
 
 Aanjaney Shukla
 
