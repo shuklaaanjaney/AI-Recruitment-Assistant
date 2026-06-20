@@ -214,6 +214,9 @@ Through this project, I gained hands-on experience with:
 
 ## Author
 
+
+<img width="1692" height="900" alt="Screenshot 2026-06-20 234951" src="https://github.com/user-attachments/assets/9dd771ae-8de2-41dc-90c1-ab5745a27b98" />
+
 Aanjaney Shukla
 
 B.Tech Computer Engineering
