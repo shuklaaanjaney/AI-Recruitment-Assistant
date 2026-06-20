@@ -1,0 +1,25 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<h2>Jobs</h2>
+
+<table class="table table-bordered">
+
+    <tr>
+        <th>Title</th>
+        <th>Experience</th>
+    </tr>
+
+    {% for job in jobs %}
+
+    <tr>
+        <td>{{ job.title }}</td>
+        <td>{{ job.experience }} Years</td>
+    </tr>
+
+    {% endfor %}
+
+</table>
+
+{% endblock %}

@@ -1,0 +1,27 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<h2>Candidates</h2>
+
+<table class="table table-striped">
+
+    <tr>
+        <th>Name</th>
+        <th>Email</th>
+        <th>Phone</th>
+    </tr>
+
+    {% for candidate in candidates %}
+
+    <tr>
+        <td>{{ candidate.name }}</td>
+        <td>{{ candidate.email }}</td>
+        <td>{{ candidate.phone }}</td>
+    </tr>
+
+    {% endfor %}
+
+</table>
+
+{% endblock %}
