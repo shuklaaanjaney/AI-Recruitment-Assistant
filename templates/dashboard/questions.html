@@ -1,0 +1,19 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<h2>Interview Questions</h2>
+
+<ol>
+
+{% for question in questions %}
+
+<li class="mb-3">
+    {{ question }}
+</li>
+
+{% endfor %}
+
+</ol>
+
+{% endblock %}
