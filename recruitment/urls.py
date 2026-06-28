@@ -1,5 +1,5 @@
 from django.urls import path
-from .views import (JobListAPIView, JobCreateAPIView, JobDetailAPIView, JobUpdateAPIView, JobDeleteAPIView, CandidateListAPIView, CandidateCreateAPIView, CandidateDetailAPIView, CandidateUpdateAPIView, CandidateDeleteAPIView, ApplicationListAPIView, ApplicationCreateAPIView, ApplicationDetailAPIView, ApplicationUpdateAPIView, ApplicationDeleteAPIView, ProcessJobAPIView, ProcessResumeAPIView ,RankCandidatesAPIView, GenerateInterviewQuestionsAPIView, SkillGapAnalysisAPIView, RecommendationAPIView)
+from .views import (JobListAPIView, JobCreateAPIView, JobDetailAPIView, JobUpdateAPIView, JobDeleteAPIView, CandidateListAPIView, CandidateCreateAPIView, CandidateDetailAPIView, CandidateUpdateAPIView, CandidateDeleteAPIView, ApplicationListAPIView, ApplicationCreateAPIView, ApplicationDetailAPIView, ApplicationUpdateAPIView, ApplicationDeleteAPIView, ProcessJobAPIView, ProcessResumeAPIView ,RankCandidatesAPIView, GenerateInterviewQuestionsAPIView, SkillGapAnalysisAPIView, RecommendationAPIView, CandidateStatusAPIView, StartJobRankingAPIView)
 
 urlpatterns = [
     path("jobs/" ,JobListAPIView.as_view(),  name="job-list"),
@@ -23,4 +23,6 @@ urlpatterns = [
     path("applications/<int:pk>/generate-questions/",GenerateInterviewQuestionsAPIView.as_view(),name="generate-questions"),
     path("applications/<int:pk>/skill-gap/",SkillGapAnalysisAPIView.as_view(),name="skill-gap"),
     path("applications/<int:pk>/recommendation/",RecommendationAPIView.as_view(),name="recommendation"),
+    path("candidates/<int:pk>/status/",CandidateStatusAPIView.as_view(),),
+    path("jobs/<int:pk>/start-ranking/",StartJobRankingAPIView.as_view(),),
 ]    
