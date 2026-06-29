@@ -2,6 +2,37 @@
 
 {% block content %}
 
-<h1>Dashboard Template Works</h1>
+
+<div class="d-flex justify-content-between align-items-center mb-4">
+
+    <div>
+        <h2 class="fw-bold">
+            AI Recruitment Dashboard
+        </h2>
+
+        <p class="text-muted">
+            Monitor jobs, candidates, AI processing and recruitment insights.
+        </p>
+    </div>
+
+</div>
+
+<div class="row g-4">
+
+    <div class="col-md-3">
+        <div class="card shadow-sm border-0">
+            <div class="card-body text-center">
+
+                <h1 class="fw-bold text-primary">
+                    {{ total_jobs }}
+                </h1>
+
+                <p>Total Jobs</p>
+
+            </div>
+        </div>
+    </div>
+
+</div>
 
 {% endblock %}
