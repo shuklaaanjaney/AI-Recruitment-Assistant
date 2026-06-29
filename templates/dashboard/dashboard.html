@@ -174,4 +174,58 @@
     </div>
 
 </div>
+<div class="col-md-6">
+
+    <div class="card shadow border-0 h-100">
+
+        <div class="card-header bg-primary text-white">
+            AI Insights
+        </div>
+
+        <div class="card-body">
+
+            <ul class="list-group list-group-flush">
+
+                <li class="list-group-item d-flex justify-content-between">
+                    <span>Average AI Score</span>
+                    <strong>{{ average_score }}%</strong>
+                </li>
+
+                <li class="list-group-item d-flex justify-content-between">
+                    <span>Strong Recommendations</span>
+                    <strong>{{ strong_recommendations }}</strong>
+                </li>
+
+                <li class="list-group-item d-flex justify-content-between">
+                    <span>Completed Resumes</span>
+                    <strong>{{ completed_resumes }}</strong>
+                </li>
+
+                <li class="list-group-item d-flex justify-content-between">
+                    <span>Pending Resumes</span>
+                    <strong>{{ pending_resumes }}</strong>
+                </li>
+
+                <li class="list-group-item d-flex justify-content-between">
+                    <span>Failed Resumes</span>
+                    <strong>{{ failed_resumes }}</strong>
+                </li>
+
+                <li class="list-group-item d-flex justify-content-between">
+                    <span>Completed Jobs</span>
+                    <strong>{{ completed_jobs }}</strong>
+                </li>
+
+                <li class="list-group-item d-flex justify-content-between">
+                    <span>Pending Jobs</span>
+                    <strong>{{ pending_jobs }}</strong>
+                </li>
+
+            </ul>
+
+        </div>
+
+    </div>
+
+</div>
 {% endblock %}
