@@ -67,4 +67,61 @@
         </div>
     </div>
 </div>
+<!-- AI Statistics -->
+
+<div class="row g-4 mt-2">
+
+    <div class="col-md-3">
+        <div class="card shadow-sm border-0">
+            <div class="card-body text-center">
+                <h2 class="fw-bold text-success">
+                    {{ average_score }}%
+                </h2>
+                <p class="mb-0">
+                    Average AI Score
+                </p>
+            </div>
+        </div>
+    </div>
+
+    <div class="col-md-3">
+        <div class="card shadow-sm border-0">
+            <div class="card-body text-center">
+                <h2 class="fw-bold text-primary">
+                    {{ strong_recommendations }}
+                </h2>
+                <p class="mb-0">
+                    Strong Recommendations
+                </p>
+            </div>
+        </div>
+    </div>
+
+    <div class="col-md-3">
+        <div class="card shadow-sm border-0">
+            <div class="card-body text-center">
+                <h2 class="fw-bold text-warning">
+                    {{ pending_resumes }}
+                </h2>
+                <p class="mb-0">
+                    Pending Resumes
+                </p>
+            </div>
+        </div>
+    </div>
+
+    <div class="col-md-3">
+        <div class="card shadow-sm border-0">
+            <div class="card-body text-center">
+                <h2 class="fw-bold text-danger">
+                    {{ failed_resumes }}
+                </h2>
+                <p class="mb-0">
+                    Failed Resumes
+                </p>
+            </div>
+        </div>
+    </div>
+
+</div>
 {% endblock %}
