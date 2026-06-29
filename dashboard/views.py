@@ -9,20 +9,7 @@ def dashboard_view(request):
         request,
         "dashboard/dashboard.html",
         {
-            "total_jobs": 0,
-            "total_candidates": 0,
-            "total_applications": 0,
-            "processed_resumes": 0,
-            "processed_jobs": 0,
-            "top_candidate": None,
-            "top_candidates": [],
-            "average_score": 0,
-            "strong_recommendations": 0,
-            "pending_resumes": 0,
-            "completed_resumes": 0,
-            "failed_resumes": 0,
-            "pending_jobs": 0,
-            "completed_jobs": 0,
+            ...
         },
     )
 
