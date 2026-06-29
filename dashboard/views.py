@@ -4,19 +4,38 @@ from recruitment.services.interview_generator import (generate_questions)
 from django.core.cache import cache
 from django.db.models import Avg
 
-from django.http import HttpResponse
 
 def dashboard_view(request):
 
     context = cache.get("dashboard_context")
 
     if context:
-        print("Dashboard loaded from Redis Cache")
         return render(request, "dashboard/dashboard.html", context)
 
     print("Dashboard loaded from PostgreSQL")
 
-    
+    # calculate all statistics
+    ...
+    ...
+    ...
+
+    context = {
+        ...
+    }
+
+    cache.set(
+        "dashboard_context",
+        context,
+        timeout=300
+    )
+
+    return render(
+        request,
+        "dashboard/dashboard.html",
+        context
+    )
+
+
 def interview_questions_page(
     request,
     pk
