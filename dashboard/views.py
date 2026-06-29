@@ -7,12 +7,16 @@ from django.db.models import Avg
 from django.http import HttpResponse
 
 def dashboard_view(request):
-    return render(
-        request,
-        "dashboard/dashboard.html",
-        {}
-    )
 
+    context = cache.get("dashboard_context")
+
+    if context:
+        print("Dashboard loaded from Redis Cache")
+        return render(request, "dashboard/dashboard.html", context)
+
+    print("Dashboard loaded from PostgreSQL")
+
+    
 def interview_questions_page(
     request,
     pk
