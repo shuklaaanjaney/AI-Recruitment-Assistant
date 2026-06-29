@@ -7,7 +7,11 @@ from django.db.models import Avg
 from django.http import HttpResponse
 
 def dashboard_view(request):
-    return HttpResponse("<h1>Dashboard Works</h1>")
+    return render(
+        request,
+        "dashboard/dashboard.html",
+        {}
+    )
 
 def interview_questions_page(
     request,
