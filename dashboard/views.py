@@ -10,29 +10,85 @@ def dashboard_view(request):
     context = cache.get("dashboard_context")
 
     if context:
+        print("Dashboard loaded from Redis Cache")
         return render(request, "dashboard/dashboard.html", context)
 
     print("Dashboard loaded from PostgreSQL")
 
-    # calculate all statistics
-    ...
-    ...
-    ...
+    top_application = (
+        Application.objects
+        .filter(ai_score__isnull=False)
+        .select_related("candidate")
+        .order_by("-ai_score")
+        .first()
+    )
+
+    top_candidates = (
+        Application.objects
+        .filter(ai_score__isnull=False)
+        .select_related("candidate")
+        .order_by("-ai_score")[:5]
+    )
+
+    average_score = (
+        Application.objects
+        .filter(ai_score__isnull=False)
+        .aggregate(avg_score=Avg("ai_score"))
+    )
+
+    strong_recommendations = (
+        Application.objects
+        .filter(ai_score__gte=80)
+        .count()
+    )
+
+    pending_resumes = Candidate.objects.filter(
+        processing_status="PENDING"
+    ).count()
+
+    completed_resumes = Candidate.objects.filter(
+        processing_status="COMPLETED"
+    ).count()
+
+    failed_resumes = Candidate.objects.filter(
+        processing_status="FAILED"
+    ).count()
+
+    pending_jobs = Job.objects.filter(
+        processing_status="PENDING"
+    ).count()
+
+    completed_jobs = Job.objects.filter(
+        processing_status="COMPLETED"
+    ).count()
 
     context = {
-        ...
+        "total_jobs": Job.objects.count(),
+        "total_candidates": Candidate.objects.count(),
+        "total_applications": Application.objects.count(),
+        "processed_resumes": CandidateProfile.objects.count(),
+        "processed_jobs": JobProfile.objects.count(),
+        "top_candidate": top_application,
+        "top_candidates": top_candidates,
+        "average_score": round(average_score["avg_score"] or 0, 2),
+        "strong_recommendations": strong_recommendations,
+        "pending_resumes": pending_resumes,
+        "completed_resumes": completed_resumes,
+        "failed_resumes": failed_resumes,
+        "pending_jobs": pending_jobs,
+        "completed_jobs": completed_jobs,
     }
 
     cache.set(
         "dashboard_context",
         context,
-        timeout=300
+        timeout=300,
     )
 
     return render(
         request,
         "dashboard/dashboard.html",
-        context
+        context,
     )
 
 
