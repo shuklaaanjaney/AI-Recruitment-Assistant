@@ -4,14 +4,10 @@ from recruitment.services.interview_generator import (generate_questions)
 from django.core.cache import cache
 from django.db.models import Avg
 
+from django.http import HttpResponse
+
 def dashboard_view(request):
-    return render(
-        request,
-        "dashboard/dashboard.html",
-        {
-            ...
-        },
-    )
+    return HttpResponse("<h1>Dashboard Works</h1>")
 
 def interview_questions_page(
     request,
