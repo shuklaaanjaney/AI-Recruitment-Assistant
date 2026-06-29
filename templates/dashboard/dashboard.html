@@ -2,6 +2,7 @@
 
 {% block content %}
 
+<!-- Header -->
 
 <div class="d-flex justify-content-between align-items-center mb-4">
 
@@ -10,124 +11,112 @@
             AI Recruitment Dashboard
         </h2>
 
-        <p class="text-muted">
+        <p class="text-muted mb-0">
             Monitor jobs, candidates, AI processing and recruitment insights.
         </p>
     </div>
 
 </div>
 
+<!-- Statistics -->
+
 <div class="row g-4">
 
     <div class="col-md-3">
-        <div class="card shadow-sm border-0">
+        <div class="card shadow-sm border-0 h-100">
             <div class="card-body text-center">
+                <h1 class="fw-bold text-primary">{{ total_jobs }}</h1>
+                <p class="mb-0">Total Jobs</p>
+            </div>
+        </div>
+    </div>
 
-                <h1 class="fw-bold text-primary">
-                    {{ total_jobs }}
-                </h1>
+    <div class="col-md-3">
+        <div class="card shadow-sm border-0 h-100">
+            <div class="card-body text-center">
+                <h1 class="fw-bold text-success">{{ total_candidates }}</h1>
+                <p class="mb-0">Candidates</p>
+            </div>
+        </div>
+    </div>
 
-                <p>Total Jobs</p>
+    <div class="col-md-3">
+        <div class="card shadow-sm border-0 h-100">
+            <div class="card-body text-center">
+                <h1 class="fw-bold text-warning">{{ total_applications }}</h1>
+                <p class="mb-0">Applications</p>
+            </div>
+        </div>
+    </div>
 
+    <div class="col-md-3">
+        <div class="card shadow-sm border-0 h-100">
+            <div class="card-body text-center">
+                <h1 class="fw-bold text-info">{{ processed_resumes }}</h1>
+                <p class="mb-0">Processed Resumes</p>
             </div>
         </div>
     </div>
 
 </div>
 
-<div class="col-md-3">
-    <div class="card shadow-sm border-0">
-        <div class="card-body text-center">
-            <h1 class="fw-bold text-success">
-                {{ total_candidates }}
-            </h1>
-            <p>Candidates</p>
-        </div>
-    </div>
-</div>
-
-<div class="col-md-3">
-    <div class="card shadow-sm border-0">
-        <div class="card-body text-center">
-            <h1 class="fw-bold text-warning">
-                {{ total_applications }}
-            </h1>
-            <p>Applications</p>
-        </div>
-    </div>
-</div>
-
-<div class="col-md-3">
-    <div class="card shadow-sm border-0">
-        <div class="card-body text-center">
-            <h1 class="fw-bold text-info">
-                {{ processed_resumes }}
-            </h1>
-            <p>Processed Resumes</p>
-        </div>
-    </div>
-</div>
 <!-- AI Statistics -->
 
 <div class="row g-4 mt-2">
 
     <div class="col-md-3">
-        <div class="card shadow-sm border-0">
+        <div class="card shadow-sm border-0 h-100">
             <div class="card-body text-center">
                 <h2 class="fw-bold text-success">
                     {{ average_score }}%
                 </h2>
-                <p class="mb-0">
-                    Average AI Score
-                </p>
+                <p class="mb-0">Average AI Score</p>
             </div>
         </div>
     </div>
 
     <div class="col-md-3">
-        <div class="card shadow-sm border-0">
+        <div class="card shadow-sm border-0 h-100">
             <div class="card-body text-center">
                 <h2 class="fw-bold text-primary">
                     {{ strong_recommendations }}
                 </h2>
-                <p class="mb-0">
-                    Strong Recommendations
-                </p>
+                <p class="mb-0">Strong Recommendations</p>
             </div>
         </div>
     </div>
 
     <div class="col-md-3">
-        <div class="card shadow-sm border-0">
+        <div class="card shadow-sm border-0 h-100">
             <div class="card-body text-center">
                 <h2 class="fw-bold text-warning">
                     {{ pending_resumes }}
                 </h2>
-                <p class="mb-0">
-                    Pending Resumes
-                </p>
+                <p class="mb-0">Pending Resumes</p>
             </div>
         </div>
     </div>
 
     <div class="col-md-3">
-        <div class="card shadow-sm border-0">
+        <div class="card shadow-sm border-0 h-100">
             <div class="card-body text-center">
                 <h2 class="fw-bold text-danger">
                     {{ failed_resumes }}
                 </h2>
-                <p class="mb-0">
-                    Failed Resumes
-                </p>
+                <p class="mb-0">Failed Resumes</p>
             </div>
         </div>
     </div>
 
 </div>
 
-<div class="row mt-4">
+<!-- Top Candidate & AI Insights -->
 
-    <div class="col-md-6">
+<div class="row mt-4 g-4">
+
+    <!-- Top Candidate -->
+
+    <div class="col-lg-6">
 
         <div class="card shadow border-0 h-100">
 
@@ -161,7 +150,7 @@
 
                 {% else %}
 
-                    <p class="text-muted">
+                    <p class="text-muted mb-0">
                         No ranked candidate available.
                     </p>
 
@@ -173,61 +162,67 @@
 
     </div>
 
-</div>
-<div class="col-md-6">
+    <!-- AI Insights -->
 
-    <div class="card shadow border-0 h-100">
+    <div class="col-lg-6">
 
-        <div class="card-header bg-primary text-white">
-            AI Insights
-        </div>
+        <div class="card shadow border-0 h-100">
 
-        <div class="card-body">
+            <div class="card-header bg-primary text-white">
+                AI Insights
+            </div>
 
-            <ul class="list-group list-group-flush">
+            <div class="card-body p-0">
 
-                <li class="list-group-item d-flex justify-content-between">
-                    <span>Average AI Score</span>
-                    <strong>{{ average_score }}%</strong>
-                </li>
+                <ul class="list-group list-group-flush">
 
-                <li class="list-group-item d-flex justify-content-between">
-                    <span>Strong Recommendations</span>
-                    <strong>{{ strong_recommendations }}</strong>
-                </li>
+                    <li class="list-group-item d-flex justify-content-between">
+                        <span>Average AI Score</span>
+                        <strong>{{ average_score }}%</strong>
+                    </li>
 
-                <li class="list-group-item d-flex justify-content-between">
-                    <span>Completed Resumes</span>
-                    <strong>{{ completed_resumes }}</strong>
-                </li>
+                    <li class="list-group-item d-flex justify-content-between">
+                        <span>Strong Recommendations</span>
+                        <strong>{{ strong_recommendations }}</strong>
+                    </li>
 
-                <li class="list-group-item d-flex justify-content-between">
-                    <span>Pending Resumes</span>
-                    <strong>{{ pending_resumes }}</strong>
-                </li>
+                    <li class="list-group-item d-flex justify-content-between">
+                        <span>Completed Resumes</span>
+                        <strong>{{ completed_resumes }}</strong>
+                    </li>
 
-                <li class="list-group-item d-flex justify-content-between">
-                    <span>Failed Resumes</span>
-                    <strong>{{ failed_resumes }}</strong>
-                </li>
+                    <li class="list-group-item d-flex justify-content-between">
+                        <span>Pending Resumes</span>
+                        <strong>{{ pending_resumes }}</strong>
+                    </li>
 
-                <li class="list-group-item d-flex justify-content-between">
-                    <span>Completed Jobs</span>
-                    <strong>{{ completed_jobs }}</strong>
-                </li>
+                    <li class="list-group-item d-flex justify-content-between">
+                        <span>Failed Resumes</span>
+                        <strong>{{ failed_resumes }}</strong>
+                    </li>
 
-                <li class="list-group-item d-flex justify-content-between">
-                    <span>Pending Jobs</span>
-                    <strong>{{ pending_jobs }}</strong>
-                </li>
+                    <li class="list-group-item d-flex justify-content-between">
+                        <span>Completed Jobs</span>
+                        <strong>{{ completed_jobs }}</strong>
+                    </li>
 
-            </ul>
+                    <li class="list-group-item d-flex justify-content-between">
+                        <span>Pending Jobs</span>
+                        <strong>{{ pending_jobs }}</strong>
+                    </li>
+
+                </ul>
+
+            </div>
 
         </div>
 
     </div>
 
 </div>
+
+<!-- Top Ranked Candidates -->
+
 <div class="card shadow border-0 mt-4">
 
     <div class="card-header bg-success text-white">
@@ -241,9 +236,11 @@
             <thead>
 
                 <tr>
+
                     <th>#</th>
                     <th>Candidate</th>
-                    <th>AI Score</th>
+                    <th class="text-end">AI Score</th>
+
                 </tr>
 
             </thead>
@@ -258,10 +255,12 @@
 
                     <td>{{ application.candidate.name }}</td>
 
-                    <td>
+                    <td class="text-end">
+
                         <span class="badge bg-success fs-6">
                             {{ application.ai_score }}%
                         </span>
+
                     </td>
 
                 </tr>
@@ -270,7 +269,7 @@
 
                 <tr>
 
-                    <td colspan="3" class="text-center text-muted">
+                    <td colspan="3" class="text-center text-muted py-4">
                         No ranked candidates available.
                     </td>
 
@@ -285,4 +284,5 @@
     </div>
 
 </div>
+
 {% endblock %}
