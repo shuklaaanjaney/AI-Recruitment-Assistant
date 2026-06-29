@@ -6,7 +6,7 @@ from django.db.models import Avg
 
 def dashboard_view(request):
 
-    context = cache.get("dashboard_context")
+    context =  cache.get("dashboard_context")
 
     if context:
         print("Dashboard loaded from Redis Cache")

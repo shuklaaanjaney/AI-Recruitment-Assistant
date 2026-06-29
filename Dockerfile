@@ -17,18 +17,19 @@ RUN apt-get update && apt-get install -y \
 
 # Install Python dependencies
 COPY requirements.txt .
+
 RUN pip install --upgrade pip
+
 RUN pip install --no-cache-dir -r requirements.txt
 
 # Copy project
 COPY . .
 
-# Collect static files
-RUN python manage.py collectstatic --noinput
+# Make entrypoint executable
+RUN chmod +x entrypoint.sh
 
-# Expose Django port
+# Expose port
 EXPOSE 8000
 
-# Run migrations and start Gunicorn
-CMD python manage.py migrate && \
-    gunicorn config.wsgi:application --bind 0.0.0.0:8000
+# Start application
+ENTRYPOINT ["./entrypoint.sh"]
